@@ -29,16 +29,15 @@ int main() {
         << (tm->tm_year + 1900) << "\n";
 
         std::cout << "Температура: "<< data["main"]["temp"] << "°C" << "(ощущается как " << data["main"]["feels_like"] << "°C)\n";
-        auto is_rain = data["weather"][0]["description"];
+        auto weather = data["weather"][0]["description"];
 
-        std::cout << "Погода: " << is_rain << "\n";
+        std::cout << "Погода: " << weather << "\n";
 
         std::cout << "Влажность: " << data["main"]["humidity"] << "\n";
 
         double wind_speed = data["wind"]["speed"];
-        int wind_deg = data["wind"]["deg"];
 
-        std::cout << "Ветер: " << wind_speed << " м/с, направление: " << wind_deg << "°\n";
+        std::cout << "Ветер: " << wind_speed << '\n';
     } else {
         std::cout << "Ошибка при получении данных\n";
     }
